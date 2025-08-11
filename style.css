@@ -1,0 +1,112 @@
+.container{
+    max-width: 1212px;
+    margin: 0 auto;
+}
+.header_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 33px;
+}
+.header_list{
+    display: flex;
+    gap: 50px;
+}
+.header_item1{
+    font-family: var(--second-family);
+font-weight: 700;
+font-size: 16px;
+color: #3d3d3d;
+border-bottom: 3px solid #46a358;
+}
+.header_item{
+    font-family: var(--second-family);
+font-weight: 400;
+font-size: 16px;
+color: #3d3d3d;
+}
+.header_buttons{
+    display: flex;
+    gap: 30px;
+}
+.header_btn{
+    background: transparent;
+    border: none;
+}
+.header_btn_green{
+    background-color: #46a358;
+    border-radius: 6px;
+    width: 100px;
+    height: 35px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+}
+.promo{
+    margin-top: 80px;
+}
+.promo_box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.promo_title{
+    font-family: var(--font-family);
+font-weight: 500;
+font-size: 14px;
+line-height: 114%;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: #3d3d3d;
+}
+.promo_title_1{
+    font-family: var(--font-family);
+font-weight: 900;
+font-size: 70px;
+line-height: 100%;
+text-transform: uppercase;
+color: #3d3d3d;
+}
+.planet{
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 70px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #46a358;
+}
+.promo_text{
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+line-height: 171%;
+color: #727272;
+padding-top: 5px;
+padding-bottom: 44px;
+}
+.promo_btn{
+    border-radius: 6px;
+width: 140px;
+height: 40px;
+background: #46a358;
+font-family: var(--font-family);
+font-weight: 700;
+font-size: 16px;
+line-height: 125%;
+text-transform: uppercase;
+color: #fff;
+border: none;
+}
+.promo_img{
+    display: block;
+    width: 100%;
+}
+.promo_left{
+    max-width: 600px;
+}
