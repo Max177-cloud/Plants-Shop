@@ -42,3 +42,54 @@ function openCabinet(event){
     }
 }
 form.addEventListener(`submit`,()=>openCabinet(event))
+// filter's product
+const filter_btn=document.querySelector(`.filter_btn`)
+const filter_max=document.querySelector(`.filter_max`)
+const filter_min=document.querySelector(`.filter_min`)
+const reset_btn=document.querySelector(`.reset_btn`)
+const sort=document.querySelector(`.sort`)
+const products=Array.from(document.querySelectorAll(`.products_item`))
+function filterProducts(){
+    const min=+filter_min.value
+    const max=+filter_max.value
+    products.forEach(el=>{
+        const priceText=el.querySelector(`.products_text`).textContent
+        const price=parseFloat(priceText.replace("$", ""))
+        if (price>=min && price<=max) {
+            el.style.display=`block`
+        }else{
+            el.style.display=`none`
+        }
+    })
+}
+function resetFilters(){
+    filter_min.value=``
+    filter_max.value=``
+    products.forEach(el=>{
+        el.style.display=`block`
+    })
+
+}
+function sortedProducts(){
+    const sortType=sort.value
+    const container=document.querySelector(`.products_writer`)
+    const containerArray=Array.from(container.children)
+    containerArray.sort((a,b)=>{
+        const priceA = parseFloat(a.querySelector(".products_text").textContent.replace("$", ""));
+      const priceB = parseFloat(b.querySelector(".products_text").textContent.replace("$", ""));
+      const nameA = a.querySelector(".products_title").textContent.toLowerCase();
+      const nameB = b.querySelector(".products_title").textContent.toLowerCase();
+      switch(sortType) {
+        case "Incr": return priceA - priceB;
+        case "Descr": return priceB - priceA;
+        case "Alp": return nameA.localeCompare(nameB);
+        default: return 0;
+      }
+    });
+
+    container.innerHTML = "";
+    containerArray.forEach(item => container.appendChild(item));
+    }
+sort.addEventListener(`change`,()=>sortedProducts())
+filter_btn.addEventListener(`click`,()=>filterProducts())
+reset_btn.addEventListener(`click`,()=>resetFilters())
