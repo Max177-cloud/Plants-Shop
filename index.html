@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css"/>
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -19,9 +20,10 @@
                 <li class="header_item">Blogs</li>
             </ul>
             <div class="header_buttons">
-                <button class="header_btn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button class="header_btn header_search"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M14.5726 16.0029C10.5755 19.1865 4.988 18.3056 2.02842 14.6542C-0.828088 11.129 -0.64944 6.04347 2.44943 2.82482C5.65137 -0.500594 10.6854 -0.944524 14.3346 1.78337C15.642 2.76051 16.6183 4.00364 17.2542 5.50838C17.8938 7.02186 18.0881 8.59654 17.8663 10.2205C17.6452 11.837 17 13.2775 15.9499 14.6217C16.0349 14.6773 16.1255 14.7173 16.1904 14.7822C17.3448 15.9311 18.4947 17.0843 19.6491 18.2331C19.9227 18.5054 20.0589 18.8225 19.9776 19.2047C19.8165 19.9651 18.9107 20.2586 18.3298 19.7366C18.0575 19.4925 17.807 19.2234 17.5484 18.9649C16.6002 18.0177 15.6526 17.0699 14.7044 16.1227C14.665 16.0853 14.6238 16.0503 14.5726 16.0029ZM15.9605 8.98677C15.9705 5.12689 12.8529 2.00627 8.98261 2.00065C5.12292 1.99503 2.00781 5.09068 1.99094 8.94806C1.97408 12.8173 5.08544 15.9467 8.96762 15.9648C12.8117 15.9829 15.9505 12.8504 15.9605 8.98677Z" fill="#3D3D3D" />
 </svg></button>
+<input class="search_products" type="text" placeholder="Search product">
                 <button class="header_btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M17.1567 20.25H9.89163C6.79003 20.25 4.26667 17.7267 4.26667 14.6251V8.85947C4.26667 5.9762 2.82958 3.30739 0.422521 1.72031C-0.00975775 1.43531 -0.129101 0.853876 0.155897 0.421598C0.440896 -0.0107278 1.02228 -0.130118 1.45465 0.154974C2.82874 1.06097 3.94351 2.2559 4.74067 3.63167C4.91293 3.82466 6.30202 5.29699 8.57919 5.29699H19.3748C22.3201 5.24191 24.6254 8.19769 23.8554 11.0406L22.6126 15.9939C21.9839 18.4998 19.7404 20.25 17.1567 20.25ZM5.90513 6.64234C6.06099 7.36238 6.14166 8.10483 6.14166 8.85947V14.6251C6.14166 16.6928 7.8239 18.375 9.89163 18.375H17.1567C18.8792 18.375 20.3748 17.2082 20.794 15.5376L22.0367 10.5844C22.4943 8.89509 21.1243 7.13931 19.3748 7.17198H8.57914C7.54926 7.17198 6.65283 6.94993 5.90513 6.64234ZM9.42289 22.8281C9.42289 22.1809 8.89822 21.6563 8.25102 21.6563C6.69609 21.7182 6.69745 23.9387 8.25102 24C8.89822 24 9.42289 23.4753 9.42289 22.8281ZM18.751 22.8281C18.751 22.1809 18.2263 21.6563 17.5791 21.6563C16.0242 21.7182 16.0255 23.9387 17.5791 24C18.2263 24 18.751 23.4753 18.751 22.8281ZM20.3123 9.98446C20.3123 9.46668 19.8925 9.04697 19.3748 9.04697H8.95414C7.71027 9.09647 7.71121 10.8729 8.95414 10.922H19.3748C19.8925 10.922 20.3123 10.5022 20.3123 9.98446Z" fill="#3D3D3D" />
 </svg></button>
@@ -51,7 +53,8 @@
             <div class="products_left">
                 <h3 class="categories">Categories</h3>
                 <ul class="category_list">
-                    <li class="category_item_1">House Plants</li>
+                    <li class="category_item">All</li>
+                    <li class="category_item">House Plants</li>
                     <li class="category_item">Potter Plants</li>
                     <li class="category_item">Seeds</li>
                     <li class="category_item">Small Plants</li>
@@ -94,47 +97,47 @@
                     </select>
                 </div>
                 <div class="products_writer">
-                    <div class="products_item">
+                    <div data-category="House Plants" class="products_item">
                         <img class="products_img" src="./images/image 1 (1).png" alt="">
                         <h4 class="products_title">Barberton Daisy</h4>
                         <p class="products_text">$119.00</p>
                     </div>
-                    <div class="products_item">
+                    <div data-category="Potter Plants" class="products_item">
                         <img class="products_img" src="./images/product-21-320x320 1.png" alt="">
                         <h4 class="products_title">Angel Wing Begonia</h4>
                         <p class="products_text">$169.00</p>
                     </div>
-                    <div class="products_item">
+                    <div data-category="Seeds" class="products_item">
                         <img class="products_img" src="./images/image 2 (1).png" alt="">
                         <h4 class="products_title">African Violet</h4>
                         <p class="products_text">$199.00</p>
                     </div>
-                    <div class="products_item">
+                    <div data-category="Small Plants" class="products_item">
                         <img class="products_img" src="./images/01 3.png" alt="">
                         <h4 class="products_title">Beach Spider Lily</h4>
                         <p class="products_text">$129.00</p>
                     </div>
-                    <div class="products_item">
+                    <div data-category="Big Plants" class="products_item">
                         <img class="products_img" src="./images/image 7.png" alt="">
                         <h4 class="products_title">Blushing Bromeliad</h4>
                         <p class="products_text">$139.00</p>
                     </div>
-                    <div class="products_item">
+                    <div data-category="Succulents" class="products_item">
                         <img class="products_img" src="./images/image 8.png" alt="">
                         <h4 class="products_title">Aluminum Plant</h4>
                         <p class="products_text">$179.00</p>
                     </div>
-                    <div class="products_item">
+                    <div data-category="Trerrariums" class="products_item">
                         <img class="products_img" src="./images/image 9.png" alt="">
                         <h4 class="products_title">Bird's Nest Fern</h4>
                         <p class="products_text">$99.00</p>
                     </div>
-                    <div class="products_item">
+                    <div data-category="Gardening" class="products_item">
                         <img class="products_img" src="./images/product-20-320x320 1.png" alt="">
                         <h4 class="products_title">Broadleaf Lady Palm</h4>
                         <p class="products_text">$59.00</p>
                     </div>
-                    <div class="products_item">
+                    <div data-category="Accesories" class="products_item">
                         <img class="products_img" src="./images/image 10.png" alt="">
                         <h4 class="products_title">Chinese Evergreen</h4>
                         <p class="products_text">$39.00</p>
@@ -225,7 +228,7 @@
             <div class="footer_right">
                 <h3 class="footer_left_title">Would you like to join newsletters?</h3>
                 <div class="input_box">
-                    <input class="footer_input" type="text" placeholder="enter your email address...">
+                    <input class="footer_input" type="tel" placeholder="enter your telephone">
                     <button class="footer_btn">Join</button>
                 </div>
                 <p class="footer_left_text">We usually post offers and challenges in newsletter. We’re your online houseplant destination. We offer a wide range of houseplants and accessories shipped directly from our (green)house to yours!</p>
@@ -276,11 +279,11 @@
             <div class="footer_bottom_right">
                 <h3 class="footer_bottom_title">Social Media</h3>
                 <ul class="social_list">
-                    <li><a href="#" class="social_link"><img src="./images/Facebook.png" alt=""></a></li>
-                    <li><a href="#" class="social_link"><img src="./images/Instagram.png" alt=""></a></li>
-                    <li><a href="#" class="social_link"><img src="./images/Twitter.png" alt=""></a></li>
-                    <li><a href="#" class="social_link"><img src="./images/Linkedin.png" alt=""></a></li>
-                    <li><a href="#" class="social_link"><img src="./images/Union.png" alt=""></a></li>
+                    <li><a href="https://www.facebook.com/" class="social_link"><img src="./images/Facebook.png" alt=""></a></li>
+                    <li><a href="https://www.instagram.com/" class="social_link"><img src="./images/Instagram.png" alt=""></a></li>
+                    <li><a href="https://x.com/" class="social_link"><img src="./images/Twitter.png" alt=""></a></li>
+                    <li><a href="https://ua.linkedin.com/" class="social_link"><img src="./images/Linkedin.png" alt=""></a></li>
+                    <li><a href="https://youtube.com/" class="social_link"><img src="./images/Union.png" alt=""></a></li>
                 </ul>
             </div>
         </div>
@@ -340,7 +343,7 @@
 
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
     <script src="./js.js"></script>
 </body>
 </html>

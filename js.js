@@ -48,6 +48,7 @@ const filter_max=document.querySelector(`.filter_max`)
 const filter_min=document.querySelector(`.filter_min`)
 const reset_btn=document.querySelector(`.reset_btn`)
 const sort=document.querySelector(`.sort`)
+const category_item=document.querySelectorAll(`.category_item`)
 const products=Array.from(document.querySelectorAll(`.products_item`))
 function filterProducts(){
     const min=+filter_min.value
@@ -90,6 +91,37 @@ function sortedProducts(){
     container.innerHTML = "";
     containerArray.forEach(item => container.appendChild(item));
     }
+category_item.forEach(el=>{
+    el.addEventListener(`click`,()=>{
+        const category=el.textContent
+        if (category==`All`) {
+            products.forEach(item=>item.style.display=`block`)
+        }else{
+            products.forEach(p=>{
+                if (p.dataset.category.toLowerCase()==category.toLowerCase()) {
+                    p.style.display=`block`
+                }else{
+                    p.style.display=`none`
+                }
+            })
+        }
+        category_item.forEach(item=>item.classList.remove(`act_category`))
+        el.classList.add(`act_category`)
+    })
+})
 sort.addEventListener(`change`,()=>sortedProducts())
 filter_btn.addEventListener(`click`,()=>filterProducts())
 reset_btn.addEventListener(`click`,()=>resetFilters())
+// validate form
+const footer_input=document.querySelector(`.footer_input`)
+const footer_btn=document.querySelector(`.footer_btn`)
+const header_search=document.querySelector(`.header_search`)
+const search_products=document.querySelector(`.search_products`)
+
+const init=window.intlTelInput(footer_input,{initialCountry: "ua", // стартовая страна
+  preferredCountries: ["ua", "pl", "de", "us", "gb"], // список популярных
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/utils.js"})
+footer_btn.addEventListener(`click`,()=>{
+    const number=init.getNumber()
+    console.log(number)
+})
