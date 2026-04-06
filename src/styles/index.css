@@ -1,0 +1,100 @@
+/* Global Styles */
+:root {
+  --primary-color: #31a24c;
+  --text-dark: #3d3d3d;
+  --text-light: #727272;
+  --border-color: #eaeaea;
+  --bg-light: #f5f5f5;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Cera Pro', sans-serif;
+  font-size: 14px;
+  background-color: var(--white);
+}
+
+body {
+  background-color: var(--white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+}
+
+p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  font-family: 'Cera Pro', sans-serif;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn_primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn_primary:hover {
+  background-color: #279941;
+  transform: translateY(-2px);
+}
+
+.btn_secondary {
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn_secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Links */
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  body {
+    font-size: 13px;
+  }
+}
